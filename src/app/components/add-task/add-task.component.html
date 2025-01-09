@@ -1,0 +1,64 @@
+<div class="add-task-container d-flex justify-content-center align-items-center mt-5">
+  <mat-card class="example-card fixed-size-card p-4" appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>Add New Task</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form [formGroup]="taskForm" (ngSubmit)="addTask()">
+        <!-- Title Field -->
+        <mat-form-field class="mb-3 full-width">
+          <mat-label>Title</mat-label>
+          <input matInput id="title" formControlName="title" placeholder="Enter task title" />
+          <mat-error *ngIf="taskForm.get('title')?.errors?.['required']">Title is required.</mat-error>
+          <mat-error *ngIf="taskForm.get('title')?.errors?.['minlength']">
+            Title must be at least 3 characters long.
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Description Field -->
+        <mat-form-field class="mb-3 full-width">
+          <mat-label>Description</mat-label>
+          <textarea
+            matInput
+            id="description"
+            formControlName="description"
+            placeholder="Enter task description"
+          ></textarea>
+          <mat-error *ngIf="taskForm.get('description')?.errors?.['required']">
+            Description is required.
+          </mat-error>
+          <mat-error *ngIf="taskForm.get('description')?.errors?.['minlength']">
+            Description must be at least 5 characters long.
+          </mat-error>
+          <mat-error *ngIf="taskForm.get('description')?.errors?.['maxlength']">
+            Description must not exceed 100 characters.
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Priority Select 
+        <mat-form-field class="mb-3 full-width">
+          <mat-label>Priority</mat-label>
+          <mat-select formControlName="priority">
+            <mat-option value="low">Low</mat-option>
+            <mat-option value="medium">Medium</mat-option>
+            <mat-option value="high">High</mat-option>
+          </mat-select>
+        </mat-form-field>-->
+
+        <!-- Status Input 
+        <mat-form-field class="mb-3 full-width">
+          <mat-label>Status</mat-label>
+          <input matInput formControlName="status" placeholder="e.g., In Progress" />
+        </mat-form-field>-->
+
+        <!-- Submit Button -->
+        <div class="text-center">
+          <button mat-raised-button color="primary" type="submit" [disabled]="taskForm.invalid">
+            Add Task
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

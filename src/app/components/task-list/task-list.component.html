@@ -1,0 +1,66 @@
+<div class="container d-flex">
+  <!-- Filter Card -->
+  <div class="filter-container">
+    <mat-card class="filter-card">
+      <mat-card-content>
+        <section class="example-section">
+          <label class="example-margin">Filter Tasks:</label>
+          <mat-radio-group [(ngModel)]="filter" (change)="applyFilter()">
+            <mat-radio-button class="example-margin" value="All">All</mat-radio-button>
+            <mat-radio-button class="example-margin" value="Completed">Completed</mat-radio-button>
+            <mat-radio-button class="example-margin" value="Incomplete">Incomplete</mat-radio-button>
+          </mat-radio-group>
+        </section>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <header class="app-header text-center">
+      <h1 style="text-align: center; font-size: 3rem;">FocusFlow</h1>
+      <h2 style="text-align: center;" class="tagline">Simplify your tasks, amplify your focus</h2>
+    </header>
+
+    <!-- Task List -->
+    <div class="task-container d-flex flex-wrap justify-content-center">
+      <mat-card
+        class="example-card fixed-size-card m-3"
+        *ngFor="let task of filteredTasks"
+        appearance="outlined"
+      >
+        <mat-card-header>
+          <mat-card-title>{{ task.title }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content style="background-color: antiquewhite;">
+          <p>{{ task.description }}</p>
+          <p>Status: {{ task.isComplete ? 'Complete' : 'Incomplete' }}</p>
+        </mat-card-content>
+        <mat-card-footer class="example-card-footer">
+          <div class="example-button-row">
+            <div class="example-flex-container" >
+                <div class="example-button-container">
+                    <button style="background-color: moccasin;" mat-fab aria-label="Example icon button with a delete icon" (click)="deleteTask(task.id)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                    <button mat-button color="warn" (click)="deleteTask(task.id)"></button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="example-button-row">
+          <div class="example-flex-container">
+              <div class="example-button-container">
+                  <button style="background-color: moccasin;" mat-fab color="primary" (click)="toggleStatus(task.id)" extended>
+                                Mark as {{ task.isComplete ? 'Incomplete' : 'Complete' }}
+                  </button>
+              </div>
+          </div>
+      </div>
+      
+          <a style="margin-left: 15px; margin-top: 10px;" mat-button [routerLink]="['/tasks', task.id, 'edit']">Edit</a>
+        </mat-card-footer>
+      </mat-card>
+    </div>
+  </div>
+</div>

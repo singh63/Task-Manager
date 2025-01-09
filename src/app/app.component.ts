@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   standalone: false,
   styleUrl: './app.component.css'
 })
-export class AppComponent {
-  title = 'task2';
+export class AppComponent 
+{
+  title = 'task2'; 
+
 }

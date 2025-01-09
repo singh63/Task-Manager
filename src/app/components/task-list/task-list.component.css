@@ -1,0 +1,105 @@
+.example-card {
+  max-width: 400px;
+  margin: 10px;
+}
+
+.example-card-footer {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.app-header h1 {
+  font-size: 3rem;
+  color: #4CAF50; /* Your brand color */
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.task-container {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.task-filter {
+  margin-bottom: 20px;
+}
+
+.task-container {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+mat-card {
+  max-width: 300px;
+}
+
+
+.mat-card-title {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.mat-card-content p {
+  color: #555;
+}
+
+/* Ensure all cards have the same fixed size */
+.fixed-size-card {
+  width: 300px; /* Set consistent width */
+  height: 250px; /* Set consistent height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Evenly space content inside */
+  background: cornsilk; 
+}
+
+/* Adjust footer button alignment */
+.example-card-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tagline {
+  font-size: 1rem; /* Slightly smaller than the main header */
+  color: #ff7f50; /* Coral color (complements most themes) */
+  font-style: italic; /* Adds a stylish touch */
+  margin-top: -10px; /* Brings the tagline closer to the header */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow for depth */
+  font-family: 'Arial', sans-serif; /* Ensures readability and elegance */
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px; /* Adds space between the filter card and the main content */
+}
+
+.filter-container {
+  flex: 0 0 250px; /* Fixed width for the filter card */
+}
+
+.filter-card {
+  width: 100%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  position: sticky; /* Keeps the filter card visible on scroll */
+  top: 10px; /* Adjusts position when scrolling */
+  background-color: antiquewhite;
+}
+
+.main-content {
+  flex: 1; /* Allows the main content to take up the remaining space */
+}
+
+.task-container {
+  margin-top: 20px;
+}
+
+
+
+
