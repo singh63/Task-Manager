@@ -17,15 +17,21 @@
   
   .fixed-size-card {
     min-height: 300px; /* Ensure a consistent height */
+    background-color: antiquewhite;
+    width: 100%;
+    max-width: 400px;
   }
   
   .add-task-container {
-    margin-top: 40px; /* Add spacing between sections */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
   }
   
   .mat-card-title {
-    font-weight: bold;
-    text-align: center;
+    text-align: center; /* Center text in the title */
+    width: 100%; /* Take full width to ensure centering works */
   }
   
   .mat-card-content {
@@ -38,21 +44,10 @@
     align-items: center;
     padding-top: 10px;
   }
-  
-  :host {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 16px;
-    margin: 16px;
-    border: 1px solid #e0e0e0; /* Light border for better definition */
-    border-radius: 8px; /* Smooth corners for a modern look */
-    background-color: #f9f9f9; /* Subtle background color for contrast */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a soft shadow for depth */
-    font-family: 'Roboto', Arial, sans-serif; /* Consistent font with Material Design */
-    color: #424242; /* Neutral text color for readability */
-    max-width: 600px; /* Limit width for better usability on larger screens */
-    width: 100%; /* Full width on smaller screens */
+
+  .text-center {
+    text-align: center; /* Center text in the button container */
   }
+  
+  
   

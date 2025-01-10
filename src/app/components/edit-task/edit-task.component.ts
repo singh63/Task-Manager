@@ -4,10 +4,16 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TaskService } from '../../services/task.service';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import {ChangeDetectionStrategy} from '@angular/core';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatCardModule} from '@angular/material/card';
+import {MatChipsModule} from '@angular/material/chips';
 
 @Component({
   selector: 'app-edit-task',
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule,
+    MatCardModule, MatChipsModule, MatProgressBarModule],
+    changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './edit-task.component.html',
   styleUrl: './edit-task.component.css'
 })

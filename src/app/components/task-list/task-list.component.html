@@ -5,7 +5,7 @@
       <mat-card-content>
         <section class="example-section">
           <label class="example-margin">Filter Tasks:</label>
-          <mat-radio-group [(ngModel)]="filter" (change)="applyFilter()">
+          <mat-radio-group [(ngModel)]="filter" (change)="onFilterChange($event.value)">
             <mat-radio-button class="example-margin" value="All">All</mat-radio-button>
             <mat-radio-button class="example-margin" value="Completed">Completed</mat-radio-button>
             <mat-radio-button class="example-margin" value="Incomplete">Incomplete</mat-radio-button>

@@ -35,10 +35,12 @@ export class TaskListComponent implements OnInit
     tasks: Task[] = [];
     filteredTasks: Task[] = [];
     filter: string = 'All';
+    mode: 'All' | 'Completed' | 'Incomplete';
     
 
     constructor(private taskService: TaskService, private snackBar: MatSnackBar, private router: Router) 
     {
+      this.mode = 'All';
        //this.loadTasks();
     }
 
@@ -99,7 +101,7 @@ export class TaskListComponent implements OnInit
 
     onFilterChange(newFilter: string): void
     {
-      if(!newFilter)
+      //if(!newFilter)
       {
         this.filter = newFilter;
         this.applyFilter();
